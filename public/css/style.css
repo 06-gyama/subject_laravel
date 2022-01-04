@@ -1,0 +1,175 @@
+/*
+ * home.blade.phpのスタイルシート
+ */
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 100px;
+}
+
+h4 {
+    color: #3a3939;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.navbar-light .navbar-brand {
+     color: #555353;;
+}
+
+.py-4 {
+    padding: 0 !important;
+}
+
+/*
+ * [box-title]のスタイルシート
+ */
+
+.box-title {
+    background-image: url(../img/box-title_background-image.png);
+    background-size: cover;
+}
+
+.box-title h1 {
+    text-align: center;
+    padding: 200px;
+    opacity: 0.7;
+}
+
+/*
+ * [box-users]のスタイルシート
+ */
+
+.box-users p {
+    color: #555353;
+    margin-bottom: 7px;
+}
+
+.user-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-list::after{
+    content:"";
+    display: block;
+    width:30%;
+}
+
+.user-list .user{
+    max-width: 30%;
+    margin-bottom: 50px;
+}
+
+.user-list .user .profile-icon {
+    width: 85%;
+    border: 1px solid #5553532e;
+    padding: 10px;
+}
+
+.user-list .user .user-text {
+    margin-left: 15px;
+}
+
+.user-list .user .insta-icon {
+    width: 20px;
+    margin-top: -4px;
+}
+
+.user-list .user span {
+    color: black;
+}
+
+/*
+ * [footer]のスタイルシート
+ */
+
+footer {
+    margin-top: 60px;
+    height: 95px;
+    text-align: center;
+    background-color: #E9EFEF;
+}
+
+footer small {
+    font-size: 17px;
+    line-height: 95px;
+    color: #938F8F;
+}
+
+/*
+ * スマホ用のスタイルシート
+ */
+
+@media screen and (max-width: 767px) {
+    body {
+        min-width: 100%;
+    }
+
+    h1 {
+        padding: 80px 0 50px 0 !important;
+    }
+
+    h2 {
+        margin-top: 90px;
+        margin-bottom: 45px;
+    }
+
+    h4 {
+        font-size: 40px;
+    }
+
+    /*
+     * [box-users]のスタイルシート
+     */
+
+     .box-users p {
+        font-size: 25px;
+     }
+
+    .user-list {
+        display: block;
+    }
+
+    .user-list .user {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .user-list .user .profile-icon {
+        width: 100%;
+    }
+
+    .user-list .user .user-text {
+        margin: 0;
+    }
+
+    /*
+     * [footer]のスタイルシート
+     */
+
+     footer {
+        margin-top: 100px;
+        height: 82px;
+    }
+
+    footer small {
+        line-height: 82px;
+    }
+}
