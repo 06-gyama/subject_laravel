@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // 自分のid取得
+        $auth_id = Auth::id();;
+
+        $users_data = User::where('id','<>',$auth_id)->orderBy('id', 'desc')->get();
+
+        return view('home', compact('users_data', 'auth_id'));
     }
 }

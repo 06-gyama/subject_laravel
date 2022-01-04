@@ -98,10 +98,15 @@ class RegisterController extends Controller
         $data = $request->all();
 
         return User::create([
+            'img_url' => $fullFilePath,
             'name' => $data['name'],
+            'nickname' => $data['nickname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'img_url'   => $fullFilePath,
+            'place' => $data['place'],
+            'choice' => $data['choice'],
+            'profile' => $data['profile'],
+            'insta' => $data['insta'],
         ]);
     }
 }

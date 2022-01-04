@@ -1,23 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<head>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+</head>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="box-title">
+    <h1>Easy to start subject</h1>
 </div>
+
+<div class="container box-users">
+    <h2>カメラマン・被写体さん</h2>
+    <ul class="user-list">
+        @foreach ($users_data as $data)
+            <li class="user">
+                <a href="">
+                    <img class="profile-icon" src="{{ $data->img_url }}" alt="プロフィール画像">
+                    <div class="user-text">
+                        <h4>{{ $data->nickname }}</h4>
+                        <p>{{ $data->choice }}</p>
+                        <p><span>活動地 : </span>{{ $data->place }}</p>
+                        <p><img class="insta-icon" src="{{ asset('img/Instagram-icon.png') }}" alt="Instagramアイコン"> <span>ユーザーネーム</span><br>{{ $data->insta }}</p>
+                        <p>{{ $data->profile }}</p>
+                    </div>
+                </a>
+            </li>
+        @endforeach
+    </ul>
+</div>
+<footer>
+    <small>Copyright © Keita Yamaji All rights reserved.</small>
+</footer>
 @endsection
