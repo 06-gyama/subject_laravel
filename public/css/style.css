@@ -13,6 +13,7 @@ li {
 h1 {
     font-size: 80px;
     margin: 0;
+    color: #555353;
 }
 
 h2 {
@@ -27,7 +28,7 @@ h4 {
 }
 
 .navbar-light .navbar-brand {
-     color: #555353;;
+    color: #555353;
 }
 
 .py-4 {
