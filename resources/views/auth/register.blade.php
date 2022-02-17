@@ -15,7 +15,7 @@
                             <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Profile-icon') }}</label>
 
                             <div class="col-md-6">
-                                <input type="file" name="image" accept="image/jpeg,image/png" required class="form-control mx-auto">
+                                <input type="file" name="image" required class="form-control mx-auto">
                             </div>
                         </div>
                         

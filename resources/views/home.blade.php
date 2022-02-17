@@ -15,7 +15,7 @@
         @foreach ($users_data as $data)
             <li class="user">
                 <a href="">
-                    <img class="profile-icon" src="{{ $data->img_url }}" alt="プロフィール画像">
+                    <img class="profile-icon" src="data:image/png;base64,{{ $data->image }}" alt="プロフィール画像">
                     <div class="user-text">
                         <h4>{{ $data->nickname }}</h4>
                         <p>{{ $data->choice }}</p>

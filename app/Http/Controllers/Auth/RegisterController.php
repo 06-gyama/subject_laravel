@@ -97,14 +97,16 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         // 画像upload
-        $fileName = $request->file('image')->getClientOriginalName();
-        Storage::putFileAs('public/images', $request->file('image'), $fileName);
-        $fullFilePath = '/storage/images/'. $fileName;
+        // $fileName = $request->file('image')->getClientOriginalName();
+        // Storage::putFileAs('public/images', $request->file('image'), $fileName);
+        // $fullFilePath = '/storage/images/'. $fileName;
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
         
         $data = $request->all();
 
         return User::create([
-            'img_url' => $fullFilePath,
+            // 'img_url' => $fullFilePath,
+            'image' => $image,
             'name' => $data['name'],
             'nickname' => $data['nickname'],
             'email' => $data['email'],

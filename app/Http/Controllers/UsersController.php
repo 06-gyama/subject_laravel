@@ -38,14 +38,18 @@ class UsersController extends Controller
         // 対象レコード取得
         $auth = User::find($id);
 
-        if ($request->file('image') == null) {
+        // $request->file('image')
+        if ($request->image == null) {
             // Profile-icon画像未選択の場合
-            $fullFilePath = $auth->img_url;
+            // $fullFilePath = $auth->img_url;
+            $image = $auth->image;
+            
         }else{
             // 画像が選択されていた場合upload
-            $fileName = $request->file('image')->getClientOriginalName();
-            Storage::putFileAs('public/images', $request->file('image'), $fileName);
-            $fullFilePath = '/storage/images/'. $fileName;
+            // $fileName = $request->file('image')->getClientOriginalName();
+            // Storage::putFileAs('public/images', $request->file('image'), $fileName);
+            // $fullFilePath = '/storage/images/'. $fileName;
+            $image = base64_encode(file_get_contents($request->image->getRealPath()));
         }
 
         // リクエストデータ受取
@@ -91,7 +95,8 @@ class UsersController extends Controller
 
         // レコードアップデート
         $auth->fill([
-            'img_url' => $fullFilePath,
+            // 'img_url' => $fullFilePath,
+            'image' => $image,
             'name' => $data['name'],
             'nickname' => $data['nickname'],
             'email' => $data['email'],
