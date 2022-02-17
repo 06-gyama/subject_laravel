@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         // 自分のid取得
-        $auth_id = Auth::id();;
+        $auth_id = Auth::id();
 
         $users_data = User::where('id','<>',$auth_id)->orderBy('id', 'desc')->get();
 
