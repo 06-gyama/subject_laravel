@@ -17,4 +17,18 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+// 会員削除画面
+Route::get('/delete_confirm', [App\Http\Controllers\UsersController::class, 'delete_confirm'])->name('delete_confirm');
+// 会員削除
+Route::get('/destroy/{id}',[App\Http\Controllers\UsersController::class, 'destroy']);
+
+
+// 会員編集画面
+Route::get('/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('edit');
+// 会員編集
+Route::post('/update/{id}', [App\Http\Controllers\UsersController::class, 'update'])->name('update');
+
+
+// プロフィール画面
 Route::get('/profile/{id}', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
