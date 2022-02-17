@@ -20,7 +20,7 @@
                         <h4>{{ $data->nickname }}</h4>
                         <p>{{ $data->choice }}</p>
                         <p><span>活動地 : </span>{{ $data->place }}</p>
-                        <p><img class="insta-icon" src="{{ asset('img/Instagram-icon.png') }}" alt="Instagramアイコン"> <span>ユーザーネーム</span><br>{{ $data->insta }}</p>
+                        <p><img class="insta-icon" src="{{ asset('img/Instagram-icon.png') }}" alt="Instagramアイコン"> {{ $data->insta }}</p>
                         <p>{{ $data->profile }}</p>
                     </div>
                 </a>
