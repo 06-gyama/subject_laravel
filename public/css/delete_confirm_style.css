@@ -1,0 +1,29 @@
+/*
+ * delete_confirm.blade.php (会員削除画面) のスタイルシート
+ */
+
+.delete-text-wrap {
+    margin: 50px 0 50px 0 !important;
+}
+
+.delete-text {
+    width: 100%;
+    margin-left: 30px;
+}
+
+.btn {
+    margin-left: 20%;
+}
+
+.btn-left-wrap {
+    float: left;
+}
+
+.btn-left {
+    width: 131px;
+}
+
+.btn-right {
+    width: 184px;
+    margin-left: 40px;
+}

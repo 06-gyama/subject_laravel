@@ -70,6 +70,14 @@
                                     </form>
                                 </div>
                             </li>
+
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('edit') }}">{{ __('edit') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('delete_confirm') }}">{{ __('delete_confirm') }}</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -77,7 +85,13 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @if (Request::is('delete_confirm'))
+                @yield('delete_confirm')
+            @elseif (Request::is('edit'))
+                @yield('edit')
+            @else
+                @yield('content') 
+            @endif     
         </main>
     </div>
 </body>

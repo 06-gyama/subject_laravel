@@ -21,11 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
 
-            $table->string('choice');
-            $table->string('insta');
-            $table->string('place');
-            $table->string('profile');
-            $table->string('nickname');
             $table->string('img_url');
             $table->timestamps();
         });
