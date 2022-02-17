@@ -38,6 +38,12 @@
 
                             <div class="col-md-6">
                                 <input id="nickname" type="text" class="form-control" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname">
+
+                                @error('nickname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -81,7 +87,8 @@
                             <label for="place" class="col-md-4 col-form-label text-md-end">{{ __('Place') }}</label>
 
                             <div class="col-md-6">
-                                <select name="place" id="place" size="1" class="form-control">
+                                <select name="place" id="place" size="1" class="form-control" required>
+                                    <option hidden>選択してください</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
                                     <option value="岩手県">岩手県</option>
@@ -130,16 +137,30 @@
                                     <option value="鹿児島県">鹿児島県</option>
                                     <option value="沖縄県">沖縄県</option>
                                 </select>
+
+                                @error('place')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="row mb-3">
+                            <label for="choice" class="col-md-4 col-form-label text-md-end">カメラマンor被写体</label>
 
-                            <p class="col-md-4 col-form-label text-md-end">カメラマンor被写体</p>
-                            <p>
-                                <input type="radio" name="choice" value="カメラマン" checked="checked">カメラマン
-                                <input type="radio" name="choice" value="被写体">被写体
-                            </p>
+                            <div class="col-md-6" style="padding-top: 8px">
+                                <input id="choice-k" type="radio" name="choice" value="カメラマン" checked="checked">
+                                <label for="choice-k">カメラマン</label>
+                                <input id="choice-s" type="radio" name="choice" value="被写体">
+                                <label for="choice-s">被写体</label>
+
+                                @error('choice')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
                         </div>
 
@@ -148,6 +169,12 @@
 
                             <div class="col-md-6">
                                 <textarea id="profile" class="form-control" name="profile" value="{{ old('profile') }}" required></textarea>
+
+                                @error('profile')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -156,6 +183,12 @@
 
                             <div class="col-md-6">
                                 <input id="insta" type="text" class="form-control" name="insta" value="{{ old('insta') }}" required>
+
+                                @error('insta')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
