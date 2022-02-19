@@ -16,6 +16,7 @@ class VerifyCsrfToken extends Middleware
         //
     ];
 
+    // 419エラー修正
     public function handle($request, Closure $next)
     {
         if($request->route()->named('logout')) {
