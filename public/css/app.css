@@ -348,12 +348,6 @@ textarea {
   line-height: inherit;
 }
 
-/* ラジオボタン調整 */
-.card-body .row input {
-  position: relative;
-  top: 4%;
-}
-
 button,
 select {
   text-transform: none;
@@ -2381,7 +2375,6 @@ progress {
 
 textarea.form-control {
   min-height: calc(1.6em + 0.75rem + 2px);
-  resize: none;
 }
 textarea.form-control-sm {
   min-height: calc(1.6em + 0.5rem + 2px);
@@ -4441,8 +4434,7 @@ textarea.form-control-lg {
 }
 
 .navbar-light .navbar-brand {
-  /* color: rgba(0, 0, 0, 0.9); */
-  color: #555353;;
+  color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
   color: rgba(0, 0, 0, 0.9);
