@@ -11,7 +11,6 @@ ul {
 }
  
 .box-profile {
-    display: flex;
     max-width: 1000px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -22,13 +21,22 @@ ul {
  */
 
 .profile-area {
+    display: flex;
     min-width: 20%;
-    border-right: 2px solid #c5c0c0;
-    margin-top: 16px;
+    margin: 16px 10px;
+}
+
+.profile-icon-wrap {
+    width: 30%;
 }
 
 .profile-icon {
-    width: 80%;
+    width: 100%;
+}
+
+.user-text {
+    width: 70%;
+    margin-left: 20px;
 }
  
 /*
@@ -36,42 +44,54 @@ ul {
  */
 
 .post-area {
-    width: 75%;
-    margin-left: 18px;
-}
-
-.post-column form {
-    margin-left: 10px;
-    margin-bottom: 16px;
+    width: 100%;
 }
 
 .post-column .card-body {
-    padding-left: 0;
+    padding: 0;
+}
+
+.post-column form {
+    padding: 16px 0;
+    border-top: 2px solid #c5c0c0;
 }
 
 .post-column label {
-    width: 12%;
-    padding-right: 0;
-    text-align: left !important;
+    width: 30%;
 }
 
 .post-column .btn-wrap {
-    padding-left: 0;
-    padding-right: 5px;
-}
-
-.post-column .btn-area {
-    width: 76%;
+    padding-right: 45px;
     text-align: right;
 }
 
-.post-list .post {
+.post-column .post-list .post {
     border-top: 2px solid #c5c0c0;
-    padding: 16px 10px;
+    padding: 0 10px;
 }
 
-.post-list .swiper .swiper-wrapper .swiper-image img {
+.post-column .post-list .post .post-date {
+    margin: 16px 0;
+}
+
+.post-column .post-list .post .swiper .swiper-wrapper .swiper-image {
     width: 100%;
+}
+
+.post-column .post-list .post .swiper .swiper-wrapper .swiper-image img {
+    width: 100%;
+}
+
+.post-column .post-list .post .post-edit-wrap {
+    text-align: right;
+    margin-top: 16px;
+}
+
+.post-column .post-list .post .post-edit-wrap a {
+    color: #555353;
+    text-decoration: underline;
+    margin-left: 20px;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 767px) {

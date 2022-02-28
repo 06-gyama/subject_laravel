@@ -6,6 +6,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    color: #555353;
+}
+
 li {
     list-style: none;
 }
@@ -52,7 +56,6 @@ h4 {
  */
 
 .box-users p {
-    color: #555353;
     margin-bottom: 7px;
 }
 
