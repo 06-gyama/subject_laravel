@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
@@ -54,4 +53,12 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['deleted_at'];
+
+    /**
+     * ユーザーの保持する全投稿
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

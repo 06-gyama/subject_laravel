@@ -14,12 +14,12 @@
     <ul class="user-list">
         @foreach ($users_data as $data)
             <li class="user">
-                <a href="">
+                <a href="{{ url('/profile/'.$data->id) }}">
                     <img class="profile-icon" src="data:image/png;base64,{{ $data->image }}" alt="プロフィール画像">
                     <div class="user-text">
                         <h4>{{ $data->nickname }}</h4>
                         <p>{{ $data->choice }}</p>
-                        <p><span>活動地 : </span>{{ $data->place }}</p>
+                        <p><span>活動エリア : </span>{{ $data->place }}</p>
                         <p><img class="insta-icon" src="{{ asset('img/Instagram-icon.png') }}" alt="Instagramアイコン"> : {{ $data->insta }}</p>
                         <p>{{ $data->profile }}</p>
                     </div>

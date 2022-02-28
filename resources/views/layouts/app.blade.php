@@ -24,9 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Easy to start subject
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">Easy to start subject</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,15 +66,14 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    <a class="dropdown-item" href="{{ url('/profile') }}">プロフィール</a>
+
+                                    <a class="dropdown-item" href="{{ route('edit') }}">{{ __('edit') }}</a>
+
+                                    <a class="dropdown-item" href="{{ route('delete_confirm') }}">{{ __('delete_confirm') }}</a>
                                 </div>
-                            </li>
 
-                            <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('edit') }}">{{ __('edit') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('delete_confirm') }}">{{ __('delete_confirm') }}</a>
                             </li>
                         @endguest
                     </ul>
@@ -89,6 +86,10 @@
                 @yield('delete_confirm')
             @elseif (Request::is('edit'))
                 @yield('edit')
+            @elseif (Request::is('profile'))
+                @yield('profile')
+            @elseif (Request::is('profile/*'))
+                @yield('profile')
             @else
                 @yield('content') 
             @endif     

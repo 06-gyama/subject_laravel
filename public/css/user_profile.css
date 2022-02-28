@@ -1,0 +1,122 @@
+/*
+ * profile.blade.phpのスタイルシート(自分のプロフィール画面)
+ */
+
+h4 {
+    margin-bottom: 15px;
+}
+
+ul {
+    padding: 0;
+}
+ 
+.box-profile {
+    display: flex;
+    max-width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*
+ * [profile-area]のスタイルシート
+ */
+
+.profile-area {
+    min-width: 20%;
+    border-right: 2px solid #c5c0c0;
+    margin-top: 16px;
+}
+
+.profile-icon {
+    width: 80%;
+}
+ 
+/*
+ * [post-area]のスタイルシート
+ */
+
+.post-area {
+    width: 75%;
+    margin-left: 18px;
+}
+
+.post-column form {
+    margin-left: 10px;
+    margin-bottom: 16px;
+}
+
+.post-column .card-body {
+    padding-left: 0;
+}
+
+.post-column label {
+    width: 12%;
+    padding-right: 0;
+    text-align: left !important;
+}
+
+.post-column .btn-wrap {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.post-column .btn-area {
+    width: 76%;
+    text-align: right;
+}
+
+.post-list .post {
+    border-top: 2px solid #c5c0c0;
+    padding: 16px 10px;
+}
+
+.post-list .swiper .swiper-wrapper .swiper-image img {
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .box-profile {
+        display: block;
+        max-width: 540px;
+    }
+
+    /*
+     * [profile-area]のスタイルシート
+     */
+
+    .profile-area {
+        margin-left: 19px;
+        border-right: none;
+    }
+
+    .user-text {
+        margin-left: 10px;
+    }
+
+    .profile-icon {
+        width: 480px;
+    }
+
+    /*
+     * [post-area]のスタイルシート
+     */
+    
+    .post-area {
+        margin: 0;
+        width: 100%;
+    }
+
+    .post-column form {
+        border-top: 2px solid #c5c0c0;
+        padding: 16px 10px;
+        margin: 0;
+    }
+
+    .post-column label {
+        width: 100%;
+    }
+
+    .post-column .btn {
+        margin-right: -131px;
+    }
+}

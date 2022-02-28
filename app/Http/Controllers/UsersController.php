@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -13,19 +12,20 @@ class UsersController extends Controller
     {
         $auth = User::find($id);
         $auth->delete();
+
         return redirect('/');
     }
 
     public function delete_confirm()
     {
         $auth_id = Auth::id();
+
         return view('user.delete_confirm',[ 'auth_id' => $auth_id ]);
     }
 
 
     public function edit()
     {
-
         $auth = Auth::user();
 
         return view('user.edit',[ 'auth' => $auth ]);
@@ -34,16 +34,13 @@ class UsersController extends Controller
 
     public function update(Request $request, $id)
     {
-
         // 対象レコード取得
         $auth = User::find($id);
 
-        // $request->file('image')
         if ($request->image == null) {
             // Profile-icon画像未選択の場合
             // $fullFilePath = $auth->img_url;
             $image = $auth->image;
-            
         }else{
             // 画像が選択されていた場合upload
             // $fileName = $request->file('image')->getClientOriginalName();
