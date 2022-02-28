@@ -84,7 +84,7 @@ ul {
 
 .post-column .post-list .post .post-edit-wrap {
     text-align: right;
-    margin-top: 16px;
+    margin: 16px 0;
 }
 
 .post-column .post-list .post .post-edit-wrap a {
@@ -92,6 +92,12 @@ ul {
     text-decoration: underline;
     margin-left: 20px;
     font-size: 20px;
+}
+
+/* 投稿がない場合 */
+.post-column .post-none {
+    border-top: 2px solid #c5c0c0;
+    padding: 16px 10px;
 }
 
 @media screen and (max-width: 767px) {
