@@ -4,9 +4,6 @@
 <head>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/user_profile.css') }}" rel="stylesheet">
-    @if (Request::is('profile/*'))
-        <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
-    @endif
 </head>
 
 <div class="container box-profile">
@@ -46,9 +43,13 @@
 
                 @if ($posts_data->isEmpty())
                     @if (Request::is('profile'))
-                        <p>写真を投稿しましょう</p>
+                        <div class="post-none">
+                            <p>写真を投稿しましょう</p>
+                        </div>
                     @elseif (Request::is('profile/*'))
-                        <p>投稿がありません</p>
+                        <div class="post-none">
+                            <p>投稿がありません</p>
+                        </div>
                     @endif
                 @else
                     <ul class="post-list">

@@ -1,7 +1,0 @@
-/*
- * profile.blade.phpのスタイルシート
- */
-
- .post-list .post:first-child {
-    border-top: none;
-}
