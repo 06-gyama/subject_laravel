@@ -30,10 +30,8 @@ class PostController extends Controller
         $data = User::find($id);
 
         $posts_data = Post::where('user_id', $id)->get()->groupBy(function ($row) {
-            return $row->created_at->format('d');
-            });
-
-        // dd($posts_data);
+                                                                return $row->updated_at->format('d');
+                                                            });
 
         return view('profile',[ 'data' => $data, 'posts_data' => $posts_data ]);
     }
@@ -43,7 +41,7 @@ class PostController extends Controller
         $data = Auth::user();
 
         $posts_data = Post::where('user_id', $data->id)->get()->groupBy(function ($row) {
-                                                                return $row->created_at->format('d');
+                                                                    return $row->updated_at->format('d');
                                                                 });
         
         return view('profile',[ 'data' => $data, 'posts_data' => $posts_data ]);

@@ -11,7 +11,10 @@
 
 <div class="container box-profile">
     <div class="profile-area">
-        <img class="profile-icon" src="data:image/png;base64,{{ $data->image }}" alt="プロフィール画像">
+        <div class="profile-icon-wrap">
+            <img class="profile-icon" src="data:image/png;base64,{{ $data->image }}" alt="プロフィール画像">
+        </div>
+
         <div class="user-text">
             <h4>{{ $data->nickname }}</h4>
             <p>{{ $data->choice }}</p>
@@ -52,7 +55,7 @@
                         @foreach ($posts_data as $post_data)
                         <li class="post">
                             <div class="post-date">
-                                <p>{{ $post_data[0]->created_at->format('Y年m月d日') }}</p>
+                                <p>{{ $post_data[0]->updated_at->format('Y年m月d日') }}</p>
                             </div>
                             
                             <div class="swiper">
@@ -74,6 +77,13 @@
                                 <div class="swiper-button-next"></div>
                                 @endif
                             </div>
+
+                            @if (Request::is('profile'))
+                                <div class="post-edit-wrap">
+                                    <a href="" class="post-edit">編集</a>
+                                    <a href="" class="post-delete">削除</a>
+                                </div>
+                            @endif
 
                         </li>
                         @endforeach
