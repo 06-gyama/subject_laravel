@@ -5,7 +5,7 @@
 .delete-text-wrap {
     border-bottom: 2px solid #c5c0c0;
     margin: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 32px;
 }
 
 .delete-text {
@@ -15,17 +15,35 @@
 
 .btn-wrap {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .btn-left-wrap, .btn-right-wrap {
     display: block;
+    text-align: right;
+}
+
+.btn-left-wrap {
+    width: 20%;
+}
+
+.btn-right-wrap {
     width: 30%;
+    margin-right: 58px;
 }
 
-.btn-left {
-    margin-left: 58px;
-}
-
-.btn-right {
+.btn-left, .btn-right {
     margin: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .btn-left-wrap {
+        width: 25%;
+    }
+
+    .btn-right-wrap {
+        width: 40%;
+    }
 }
