@@ -13,17 +13,21 @@
 						<div class="row mb-3 delete-text-wrap">
 							<p class="col-md-4 col-form-label delete-text">退会をすると投稿も全て削除されます。</p>
 							<p class="col-md-4 col-form-label delete-text">それでも退会をしますか？</p>
-						</div>  
-						<div class="row mb-0 btn-left-wrap">
-							<div class="col-md-6 offset-md-4 btn btn-left">
-								<form method="GET" action="{{ url('/destroy/'.$auth_id) }}">
-									<button type="submit" class="btn btn-danger">退会する</button>
-								</form>
-							</div>
 						</div>
-						<div class="row mb-0">
-							<div class="col-md-6 offset-md-4 btn btn-right">
-								<a href="/" class="btn btn-primary">キャンセルする</a>
+
+						<div class="btn-wrap">
+							<div class="row mb-0 btn-left-wrap">
+								<div class="col-md-6 offset-md-4 btn-left">
+									<form method="GET" action="{{ url('/destroy/'.$auth_id) }}">
+										<button type="submit" class="btn btn-danger">退会</button>
+									</form>
+								</div>
+							</div>
+
+							<div class="row mb-0 btn-right-wrap">
+								<div class="col-md-6 offset-md-4 btn-right">
+									<a href="/" class="btn btn-primary">キャンセル</a>
+								</div>
 							</div>
 						</div>
 					</div>

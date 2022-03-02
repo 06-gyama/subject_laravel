@@ -3,7 +3,9 @@
  */
 
 .delete-text-wrap {
-    margin: 50px 0 50px 0 !important;
+    border-bottom: 2px solid #c5c0c0;
+    margin: 16px;
+    padding-bottom: 16px;
 }
 
 .delete-text {
@@ -11,19 +13,19 @@
     margin-left: 30px;
 }
 
-.btn {
-    margin-left: 20%;
+.btn-wrap {
+    display: flex;
 }
 
-.btn-left-wrap {
-    float: left;
+.btn-left-wrap, .btn-right-wrap {
+    display: block;
+    width: 30%;
 }
 
 .btn-left {
-    width: 131px;
+    margin-left: 58px;
 }
 
 .btn-right {
-    width: 184px;
-    margin-left: 40px;
+    margin: 0;
 }
