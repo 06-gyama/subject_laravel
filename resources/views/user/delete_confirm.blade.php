@@ -17,7 +17,7 @@
 						<div class="row mb-0 btn-left-wrap">
 							<div class="col-md-6 offset-md-4 btn btn-left">
 								<form method="GET" action="{{ url('/destroy/'.$auth_id) }}">
-									<button type="submit" class="btn btn-primary">退会する</button>
+									<button type="submit" class="btn btn-primary delete">退会する</button>
 								</form>
 							</div>
 						</div>
