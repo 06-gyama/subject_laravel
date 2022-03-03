@@ -35,6 +35,9 @@ h4 {
     padding: 0 !important;
 }
 
+.dropdown-item {
+    color: #555353;
+}
 
 /*
  * [box-title]のスタイルシート

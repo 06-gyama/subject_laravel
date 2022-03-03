@@ -51,27 +51,55 @@ ul {
     padding: 0;
 }
 
-.post-column form {
+.post-column .post_create {
     padding: 16px 0;
     border-top: 2px solid #c5c0c0;
 }
 
-.post-column label {
+.post-column .image-choice, .image-date {
     width: 30%;
 }
 
 .post-column .btn-wrap {
-    padding-right: 45px;
+    margin: 0;
+    width: 80%;
     text-align: right;
+    
 }
 
 .post-column .post-list .post {
     border-top: 2px solid #c5c0c0;
-    padding: 0 10px;
+    padding: 0 10px 25px 10px;
 }
 
-.post-column .post-list .post .post-date {
-    margin: 16px 0;
+.post-column .post-list .post .post-top {
+    display: flex;
+    margin-top: 16px;
+}
+
+.post-column .post-list .post .post-top .post-date {
+    width: 70%;
+}
+
+.post-column .post-list .post .post-top .post-date p {
+    margin: 0;
+}
+
+.post-column .post-list .post .post-top .dropdown {
+    width: 30%;
+    text-align: right;
+}
+
+.post-column .post-list .post .post-top .dropdown .nav-link {
+    padding: 0;
+}
+
+.post-column .post-list .post .post-top .dropdown .nav-link span{
+    color: #555353;
+}
+
+.post-column .post-list .post .post-top .btn-right {
+    margin-left: 20px;
 }
 
 .post-column .post-list .post .swiper .swiper-wrapper .swiper-image {
@@ -95,6 +123,7 @@ ul {
 }
 
 /* 投稿がない場合 */
+
 .post-column .post-none {
     border-top: 2px solid #c5c0c0;
     padding: 16px 10px;
@@ -102,48 +131,19 @@ ul {
 
 @media screen and (max-width: 767px) {
     .box-profile {
-        display: block;
-        max-width: 540px;
-    }
-
-    /*
-     * [profile-area]のスタイルシート
-     */
-
-    .profile-area {
-        margin-left: 19px;
-        margin-right: 19px;
-        border-right: none;
-    }
-
-    .user-text {
-        margin-left: 10px;
-    }
-
-    .profile-icon {
-        width: 100%;
+        width: 70%;
+        margin: auto;
     }
 
     /*
      * [post-area]のスタイルシート
      */
     
-    .post-area {
-        margin: 0;
-        width: 100%;
-    }
-
     .post-column form {
-        border-top: 2px solid #c5c0c0;
         padding: 16px 10px;
-        margin: 0;
     }
 
-    .post-column label {
+    .post-column .btn-wrap {
         width: 100%;
-    }
-
-    .post-column .btn {
-        margin-right: -131px;
     }
 }
