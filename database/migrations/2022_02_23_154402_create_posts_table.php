@@ -17,7 +17,9 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->integer('user_id')->unsigned()->index();
             $table->longText('post_image');
+            $table->datetime('post_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,5 +31,6 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
+        $table->dropSoftDeletes();
     }
 }

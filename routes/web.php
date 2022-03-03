@@ -23,15 +23,23 @@ Route::get('/profile/{id}', [App\Http\Controllers\PostController::class, 'index'
 // 自分のプロフィール画面
 Route::get('/profile', [App\Http\Controllers\PostController::class, 'userIndex'])->name('user_profile');
 
+
 // 写真投稿
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post');
+
+// 投稿編集画面
+Route::post('/post_edit', [App\Http\Controllers\PostController::class, 'post_edit'])->name('post_edit');
+// 投稿編集
+Route::post('/post_update', [App\Http\Controllers\PostController::class, 'post_update'])->name('post_update');
+
+// 投稿削除
+Route::post('/post_delete', [App\Http\Controllers\PostController::class, 'post_delete'])->name('post_delete');
 
 
 // 会員削除画面
 Route::get('/delete_confirm', [App\Http\Controllers\UsersController::class, 'delete_confirm'])->name('delete_confirm');
 // 会員削除
 Route::get('/destroy/{id}',[App\Http\Controllers\UsersController::class, 'destroy']);
-
 
 // 会員編集画面
 Route::get('/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('edit');
