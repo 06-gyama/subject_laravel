@@ -26,14 +26,14 @@ class PostController extends Controller
             // $target = array('.','..');
             // $new = str_replace($target, '', $post_image->getRealPath());
             // dd($new);
-            if ( is_file( $post_image ) ){
-            $image = base64_encode(file_get_contents($post_image->getRealPath()));
+            
+            $image = base64_encode(file_get_contents($post_image));
 // dd($image);
             $request->user()->posts()->create([
                 'post_image' => $image,
                 'post_at' => $post_at,
             ]);
-            }
+            
         }
 
         return redirect('/profile');
