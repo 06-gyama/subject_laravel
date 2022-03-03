@@ -8,6 +8,19 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+    /**
+     * ユーザー削除画面
+     */
+    public function delete_confirm()
+    {
+        $auth_id = Auth::id();
+
+        return view('user.delete_confirm',[ 'auth_id' => $auth_id ]);
+    }
+
+    /**
+     * ユーザー削除
+     */
     public function destroy($id)
     {
         $auth = User::find($id);
@@ -16,22 +29,19 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-    public function delete_confirm()
-    {
-        $auth_id = Auth::id();
-
-        return view('user.delete_confirm',[ 'auth_id' => $auth_id ]);
-    }
-
-
+    /**
+     * ユーザー編集画面
+     */
     public function edit()
     {
         $auth = Auth::user();
 
         return view('user.edit',[ 'auth' => $auth ]);
-
     }
 
+    /**
+     * ユーザー編集
+     */
     public function update(Request $request, $id)
     {
         // 対象レコード取得
