@@ -19,6 +19,7 @@ class PostController extends Controller
         $post_at = $request->post_at;
 
         $post_images = $request->post_image;
+        dd($post_images);
 
         foreach ($post_images as $post_image){
 
