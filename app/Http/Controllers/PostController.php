@@ -23,15 +23,17 @@ class PostController extends Controller
 
         foreach ($post_images as $post_image){
 
-            $target = array('.','..');
-            $new = str_replace($target, '', $post_image->getRealPath());
+            // $target = array('.','..');
+            // $new = str_replace($target, '', $post_image->getRealPath());
             // dd($new);
-            $image = base64_encode(file_get_contents($new));
+            if ( is_file( $post_image ) ){
+            $image = base64_encode(file_get_contents($post_image->getRealPath()));
 // dd($image);
             $request->user()->posts()->create([
                 'post_image' => $image,
                 'post_at' => $post_at,
             ]);
+            }
         }
 
         return redirect('/profile');
