@@ -19,12 +19,12 @@ class PostController extends Controller
         $post_at = $request->post_at;
 
         $post_images = $request->post_image;
-        dd($post_images);
+        // dd($post_images);
 
         foreach ($post_images as $post_image){
 
             $image = base64_encode(file_get_contents($post_image->getRealPath()));
-
+dd($image);
             $request->user()->posts()->create([
                 'post_image' => $image,
                 'post_at' => $post_at,
