@@ -84,7 +84,7 @@
                                             <form action="{{ url('/post_edit') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="post_at" value="{{ $post_data[0]->post_at }}">
-                                                <button type="button" class="dropdown-item">編集</button>
+                                                <button type="submit" class="dropdown-item">編集</button>
                                             </form>
                                             <!-- モーダルを開くリンク -->
                                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#testModal">削除</button>
