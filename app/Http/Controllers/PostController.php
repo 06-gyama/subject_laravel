@@ -25,9 +25,9 @@ class PostController extends Controller
 
             // $target = array('.','..');
             // $new = str_replace($target, '', $post_image->getRealPath());
-            // dd($new);
+            // dd($new);file_get_contents(
             
-            $image = base64_encode(file_get_contents($post_image->getRealPath()));
+            $image = base64_encode($post_image->getRealPath());
 // dd($image);
             $request->user()->posts()->create([
                 'post_image' => $image,
