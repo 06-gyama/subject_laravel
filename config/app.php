@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Add Intervention Image.
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -208,6 +211,8 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        // Add Intervention Image.
+        'Image' => Intervention\Image\Facades\Image::class,
         'Http' => Illuminate\Support\Facades\Http::class,
         'Js' => Illuminate\Support\Js::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
