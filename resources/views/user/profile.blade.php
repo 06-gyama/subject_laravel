@@ -86,12 +86,11 @@
                                                 <input type="hidden" name="post_at" value="{{ $post_data[0]->post_at }}">
                                                 <button type="submit" class="dropdown-item">編集</button>
                                             </form>
-                                            <!-- モーダルを開くリンク -->
-                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#testModal">削除</button>
+                                            <!-- モーダルを開くボタン -->
+                                            <button type="button" class="dropdown-item post_at" data-toggle="modal" data-target="#testModal" data-post_at="{{ $post_data[0]->post_at }}">削除</button>
                                         </div>
                                     </div>
-
-                                    <!-- ボタン・リンククリック後に表示される画面の内容 -->
+                                    <!-- ボタンクリック後に表示される画面の内容 -->
                                     <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -105,7 +104,7 @@
                                                     <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
                                                     <form action="{{ url('/post_delete') }}" method="post">
                                                         @csrf
-                                                        <input type="hidden" name="post_at" value="{{ $post_data[0]->post_at }}">
+                                                        <input type="hidden" class="modal-post_at" name="post_at">
                                                         <button type="submit" class="btn btn-right btn-danger">削除</button>
                                                     </form>
                                                 </div>
