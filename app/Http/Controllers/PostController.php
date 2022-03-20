@@ -53,7 +53,7 @@ class PostController extends Controller
             // dd($image);
             $image->orientate()->save();
 
-            $resize_image = base64_encode($image->encode('png'));
+            $resize_image = base64_encode($image);
             // dd($resize_image);
 
             $request->user()->posts()->create([
