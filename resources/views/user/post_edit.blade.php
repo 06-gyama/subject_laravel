@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('post_edit') }}</div>
+                <div class="card-header">投稿編集</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('/post_update') }}" enctype="multipart/form-data">
