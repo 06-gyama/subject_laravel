@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">会員登録</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Profile-icon') }}</label>
+                            <label for="image" class="col-md-4 col-form-label text-md-end">プロフィールアイコン</label>
 
                             <div class="col-md-6">
                                 <input type="file" name="image" required class="form-control mx-auto">
@@ -20,7 +20,7 @@
                         </div>
                         
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">名前</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nickname" class="col-md-4 col-form-label text-md-end">{{ __('NickName') }}</label>
+                            <label for="nickname" class="col-md-4 col-form-label text-md-end">ニックネーム</label>
 
                             <div class="col-md-6">
                                 <input id="nickname" type="text" class="form-control" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname">
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">メールアドレス</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">パスワード</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">パスワード再確認</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="place" class="col-md-4 col-form-label text-md-end">{{ __('Place') }}</label>
+                            <label for="place" class="col-md-4 col-form-label text-md-end">活動エリア</label>
 
                             <div class="col-md-6">
                                 <select name="place" id="place" size="1" class="form-control" required>
@@ -165,7 +165,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="profile" class="col-md-4 col-form-label text-md-end">{{ __('Profile') }}</label>
+                            <label for="profile" class="col-md-4 col-form-label text-md-end">自己紹介</label>
 
                             <div class="col-md-6">
                                 <textarea id="profile" class="form-control" name="profile" value="{{ old('profile') }}" required></textarea>
@@ -179,7 +179,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="insta" class="col-md-4 col-form-label text-md-end">{{ __('Instagram:ユーザーネーム') }}</label>
+                            <label for="insta" class="col-md-4 col-form-label text-md-end">
+                                <img class="insta-icon" src="{{ asset('img/Instagram-icon.png') }}" alt="Instagramアイコン" style="width: 20px; margin-top: -4px;">
+                                {{ __('Instagram:ユーザーネーム') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="insta" type="text" class="form-control" name="insta" value="{{ old('insta') }}" required>
@@ -194,9 +197,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                                <button type="submit" class="btn btn-primary">登録</button>
                             </div>
                         </div>
                     </form>
