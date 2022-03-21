@@ -85,6 +85,8 @@ h4 {
     width: 85%;
     border: 1px solid #5553532e;
     padding: 10px;
+    object-fit: cover;
+    height: 40%;
 }
 
 .user-list .user .user-text {
