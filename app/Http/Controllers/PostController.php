@@ -20,41 +20,18 @@ class PostController extends Controller
         $post_at = $request->post_at;
 
         $post_images = $request->file('post_image');
-        // dd($post_images);
 
         foreach ($post_images as $post_image){
-
-            // $image_path = $post_image->getRealPath();
-            // dd($image);
-
-            // $image = $post_image->getRealPath();
-            // dd($image);
-            // $image = \Image::make($post_image);
-            // dd($image);
-           
-            // dd($image);
-            // $image->resize(600, null,
-            //     function ($constraint) {
-            //         // 縦横比を保持したままにする
-            //         $constraint->aspectRatio();
-            //         // 小さい画像は大きくしない
-            //         // $constraint->upsize();
-            //     }
-            // );
-            // dd($image);
-
-           
-            // file_get_contents($post_image->getRealPath())
+            // 投稿画像リサイズ
             $image = Image::make($post_image->getRealPath())->resize(600, null, 
                 function ($constraint) {
                     $constraint->aspectRatio();
                 }
             );
-            // dd($image);
+            
             $image->orientate()->save();
 
             $resize_image = base64_encode($image);
-            // dd($resize_image);
 
             $request->user()->posts()->create([
                 'post_image' => $resize_image,
