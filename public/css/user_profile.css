@@ -132,7 +132,7 @@ ul {
 
 @media screen and (max-width: 767px) {
     .box-profile {
-        width: 70%;
+        width: 100%;
         margin: auto;
     }
 
